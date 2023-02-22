@@ -120,6 +120,8 @@ select {
 .countResult {
   display: inline-flex;
   min-height: 10vh;
+  max-height: 10vh;
+
   align-items: center;
 }
 
@@ -195,3 +197,4 @@ body {
   font: 700;
   background-color: #43ff6c;
 }
+

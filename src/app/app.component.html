@@ -54,9 +54,10 @@
     <div class="countResult">
       <h3 class="number">Times your word appears in the phrase above: </h3>
       <mat-card-title>
-        <div *ngIf="counted?.count; else elseBlock"></div>
+        <div class="counted" >
+        <div class="if-block" *ngIf="counted?.count; else elseBlock">{{counted.count}}</div>
         <ng-template #elseBlock></ng-template>
-        <div class="counted" #elseBlock >{{counted.count}}</div>
+        </div>
       </mat-card-title>
     </div>
 

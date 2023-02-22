@@ -35,7 +35,7 @@ export class AppComponent {
 
   searchWord(searchedWord: any) {
     this.searchedWord = searchedWord;
-      axios.get("http://localhost:2999/wordSearch", {params: this.searchedWord}) //replace "localhost" with deployed public IP in deployment
+      axios.get("http://54.219.113.19:2999/wordSearch", {params: this.searchedWord}) //replace "localhost" with deployed public IP in deployment
         .then(result => {
           this.counted.count = result.data;
         })
