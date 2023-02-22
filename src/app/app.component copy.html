@@ -1,0 +1,75 @@
+<div class="content" role="main">
+  <div class="appBorder">
+    <h2>Count how many times your word appears in a phrase:</h2>
+      <mat-card>
+        <form #form="ngForm"
+        (submit)="searchWord(searchedWord)">
+          <mat-card-content>
+            <mat-form-field class="full-width">
+              <textarea
+              matInput
+              placeholder="Put the phrase you wish to search here..."
+              [(ngModel)]="searchedWord.phrase"
+              name="phrase"
+              required
+              type="text">
+              <pre>{{searchedWord}}</pre>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <textarea
+            matInput
+            placeholder="Description"
+            [(ngModel)]="searchedWord.word"
+            name="word"
+            type="text">
+        </mat-form-field>
+          </mat-card-content>
+          <mat-card-actions>
+          </mat-card-actions>
+        </form>
+      </mat-card>
+
+
+    <!-- <form>
+      <textarea matInput class="phrase" type="text" name="phrase" aria-label="phrase to search" required placeholder="Put the phrase you wish to search here..." value="phrase" spellCheck="false"></textarea>
+      <textarea matInput class="word" type="text" name="word" aria-label="word to search for" required placeholder="Put the word you want counted here..." value="word" spellCheck="false"></textarea>
+      <div class="options">
+        <div class="completeWord">
+          <label>This is a complete word: </label>
+          <select name="isCompleteWord" id="isCompleteWord" defaultValue="true">
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select>
+      </div>
+      <div class="caseSensitive">
+        <label>This is case-sensitive:</label>
+        <select name="isCaseSensitive" id="isCaseSensitive" defaultValue="true">
+          <option value="true">true</option>
+          <option value="false">false</option>
+
+        </select>
+      </div>
+      <div class="search">
+        <button type="submit"  [disabled]="" class="submit" value="Submit" aria-label="search button" (click)="setMessage()">Search</button>
+        <button class="reset" type="reset"  value="Reset" aria-label="reset button">Start Over</button>
+      </div>
+    <div class="countResult">
+      <h3 class="number">Times your word appears in the phrase above: </h3>
+      <div class="counted">count</div>
+
+               <section class="full-width">
+                <mat-checkbox color="warn" [(ngModel)]="searchedWord.isCompleteWord"
+                name="isCompleteWord">This is a complete word:</mat-checkbox>
+            </section>
+            <section class="full-width">
+              <mat-checkbox color="" [(ngModel)]="searchedWord.isCaseSensitive"
+              name="favorite">Favorite?</mat-checkbox>
+          </section>
+    -->
+    </div>
+
+
+  </div>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,64 @@
+<div class="content" role="main">
+  <div class="appBorder">
+    <h2>Count how many times your word appears in a phrase:</h2>
+      <mat-card>
+        <form #form="ngForm"
+        (submit)="searchWord(searchedWord)">
+          <mat-card-content>
+              <textarea
+              class="phrase"
+              matInput
+              placeholder="Put the phrase you wish to search here..."
+              [(ngModel)]="searchedWord.phrase"
+              name="phrase"
+              required
+              type="text"
+              spellCheck="false"
+              ></textarea>
+              <textarea
+              matInput
+              class="word"
+              placeholder="Put the word you want counted here..."
+              [(ngModel)]="searchedWord.word"
+              name="word"
+              required
+              type="text"
+              spellCheck="false"></textarea>
+          <section class="full-width">
+            <div class="options">
+              <div class="completeWord">
+                <label>This is a complete word: </label>
+                <select name="isCompleteWord" id="isCompleteWord" [(ngModel)]="searchedWord.completeWord">
+                  <option value="true">true</option>
+                  <option value="false">false</option>
+                </select>
+            </div>
+            <div class="caseSensitive">
+              <label>This is case-sensitive:</label>
+              <select name="isCaseSensitive" id="isCaseSensitive" [(ngModel)]="searchedWord.caseSensitive" default="true">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+            </div>
+            </div>
+          </section>
+            </mat-card-content>
+            <mat-card-actions>
+              <div class="search">
+                <button type="submit" mat-button class="submit" [disabled]="form.invalid" aria-label="search button">Search</button>
+                <button type="button" mat-button class="reset" aria-label="reset button" (click)="counted.count = null; searchedWord.phrase = ''; searchedWord.word = ''; searchedWord.completeWord = true; searchedWord.caseSensitive = true ">Start Over</button>
+              </div>
+            </mat-card-actions>
+        </form>
+      </mat-card>
+    <div class="countResult">
+      <h3 class="number">Times your word appears in the phrase above: </h3>
+      <mat-card-title>
+        <div *ngIf="counted?.count; else elseBlock"></div>
+        <ng-template #elseBlock></ng-template>
+        <div class="counted" #elseBlock >{{counted.count}}</div>
+      </mat-card-title>
+    </div>
+
+
+<router-outlet></router-outlet>
