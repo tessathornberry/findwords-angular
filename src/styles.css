@@ -119,7 +119,7 @@ select {
 
 .countResult {
   display: inline-flex;
-  min-height: 10vh;
+  min-height: 108px;
   max-height: 10vh;
 
   align-items: center;
@@ -133,7 +133,9 @@ select {
 .counted {
   min-width: 100px;
   min-height: 100px;
-  display: inline-flex;
+  max-height: 100px;
+
+  display: flex;
   font-size: xx-large;
   font-weight: bold;
   justify-content: space-around;
@@ -197,4 +199,3 @@ body {
   font: 700;
   background-color: #43ff6c;
 }
-
